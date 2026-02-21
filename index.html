@@ -4,134 +4,180 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bombay To Mens Parlour</title>
+
 <style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0f0f0f;
-    color:white;
-    scroll-behavior:smooth;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+  text-align: center;
 }
-header{
-    background:black;
-    padding:20px;
-    text-align:center;
-    position:sticky;
-    top:0;
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
 }
-header h1{
-    color:#d4af37;
+
+h1 {
+  font-size: 40px;
+  color: #c9a227;
 }
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url('https://images.unsplash.com/photo-1517832606299-7ae9b720a186');
-    background-size:cover;
-    background-position:center;
+
+h2 {
+  color: #c9a227;
 }
-.hero h2{
-    font-size:40px;
-    color:#d4af37;
+
+.btn {
+  background: #c9a227;
+  color: black;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius: 5px;
 }
-.btn{
-    padding:12px 25px;
-    margin-top:20px;
-    background:#d4af37;
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:5px;
+
+.services {
+  padding: 50px 20px;
 }
-.section{
-    padding:60px 20px;
-    text-align:center;
+
+.service-box {
+  border: 1px solid #c9a227;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 300px;
+  border-radius: 10px;
 }
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #c9a227;
 }
-.card{
-    background:#1a1a1a;
-    padding:20px;
-    width:200px;
-    border:1px solid #d4af37;
-    border-radius:10px;
-    transition:0.3s;
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
 }
-.card:hover{
-    transform:scale(1.05);
+
+.form-container .btn {
+  width: 100%;
 }
-footer{
-    background:black;
-    padding:20px;
-    text-align:center;
-    margin-top:40px;
+
+.cancel {
+  background: red;
+  color: white;
+  padding: 8px;
+  border: none;
+  width: 100%;
+  margin-top: 5px;
 }
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    text-decoration:none;
-    font-size:20px;
+footer {
+  padding: 20px;
+  background: #111;
+  margin-top: 40px;
 }
 </style>
+
 </head>
 <body>
 
-<header>
-<h1>Bombay To Mens Parlour</h1>
-</header>
+<div class="hero">
+  <h1>Bombay To Mens Parlour</h1>
+  <h2>Style That Defines You</h2>
+  <p>Premium Grooming for Modern Men</p>
+  <button onclick="openForm()" class="btn">Book Appointment</button>
+</div>
 
-<section class="hero">
-<h2>Style That Defines You</h2>
-<p>Premium Grooming for Modern Men</p>
-<a href="https://wa.me/917256939921" class="btn">Book Appointment</a>
-</section>
+<div class="services">
+  <h2>Our Services</h2>
 
-<section class="section">
-<h2 style="color:#d4af37;">Our Services</h2>
-<div class="cards">
-<div class="card">
-<h3>Haircut</h3>
-<p>₹99</p>
-</div>
-<div class="card">
-<h3>Beard Styling</h3>
-<p>₹49</p>
-</div>
-<div class="card">
-<h3>Facial</h3>
-<p>₹149</p>
-</div>
-<div class="card">
-<h3>Kids Haircut</h3>
-<p>₹79</p>
-</div>
-</div>
-</section>
+  <div class="service-box">
+    <h3>Haircut</h3>
+    <p>₹80</p>
+  </div>
 
-<section class="section">
-<h2 style="color:#d4af37;">Contact Us</h2>
-<p>📞 7256939921</p>
-<p>📧 yadavwansiprince0@gmail.com</p>
-</section>
+  <div class="service-box">
+    <h3>Beard</h3>
+    <p>₹40</p>
+  </div>
+
+  <div class="service-box">
+    <h3>Facial</h3>
+    <p>₹120</p>
+  </div>
+
+  <div class="service-box">
+    <h3>Kids Cut</h3>
+    <p>₹60</p>
+  </div>
+</div>
+
+<div id="bookingForm" class="form-popup">
+  <form class="form-container" onsubmit="sendToWhatsApp(event)">
+    <h2>Book Appointment</h2>
+
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+    <select id="service" required>
+      <option value="">Select Service</option>
+      <option value="Haircut - ₹80">Haircut - ₹80</option>
+      <option value="Beard - ₹40">Beard - ₹40</option>
+      <option value="Facial - ₹120">Facial - ₹120</option>
+      <option value="Kids Cut - ₹60">Kids Cut - ₹60</option>
+    </select>
+
+    <input type="date" id="date" required>
+
+    <button type="submit" class="btn">Confirm Booking</button>
+    <button type="button" onclick="closeForm()" class="cancel">Close</button>
+  </form>
+</div>
 
 <footer>
-<p>© 2026 Bombay To Mens Parlour | All Rights Reserved</p>
+  <p>📞 7256939921</p>
+  <p>📧 yadavwansiprince0@gmail.com</p>
 </footer>
 
-<a href="https://wa.me/917256939921" class="whatsapp">💬</a>
+<script>
+function openForm() {
+  document.getElementById("bookingForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("bookingForm").style.display = "none";
+}
+
+function sendToWhatsApp(e) {
+  e.preventDefault();
+
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var service = document.getElementById("service").value;
+  var date = document.getElementById("date").value;
+
+  var message = `New Booking:%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date}`;
+
+  var whatsappURL = "https://wa.me/917256939921?text=" + message;
+
+  window.open(whatsappURL, "_blank");
+}
+</script>
 
 </body>
-</html>
+    </html>
