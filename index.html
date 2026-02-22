@@ -131,18 +131,91 @@ footer{
 <iframe src="https://maps.google.com/maps?q=Mithapur&t=&z=13&ie=UTF8&iwloc=&output=embed"
 width="90%" height="300" style="border:0;"></iframe>
 </div>
+<!-- ULTRA PREMIUM BOOKING SECTION START -->
+<section id="booking" class="booking-section">
+  <div class="overlay"></div>
+  <div class="booking-box">
+    <h2>Book Your Appointment</h2>
+    <p>Experience premium grooming. Select your slot now.</p>
+    <a href="https://calendar.app.google/PrAWS8yrY3qGvhti8" target="_blank" class="booking-btn">
+      Book Appointment
+    </a>
+  </div>
+</section>
 
-<!-- BOOKING SECTION -->
-<div class="section" id="booking">
-<h2>Book Your Appointment</h2>
-<p style="margin-bottom:20px;">Choose your preferred time slot and confirm instantly.</p>
+<style>
+.booking-section {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70') center/cover no-repeat;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-<a href="https://calendar.app.google/1uFBwpbjEtPbC4TQ9" 
-target="_blank" 
-class="btn">
-Book Now
-</a>
-</div>
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.booking-box {
+  position: relative;
+  max-width: 600px;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.booking-box h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #c9a227;
+}
+
+.booking-box p {
+  font-size: 18px;
+  margin-bottom: 35px;
+  color: #fff;
+}
+
+.booking-btn {
+  display: inline-block;
+  padding: 18px 45px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #c9a227, #f5d76e);
+  color: #000;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(201,162,39,0.6);
+}
+
+.booking-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px rgba(201,162,39,1);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+<!-- ULTRA PREMIUM BOOKING SECTION END -->
 
 <footer>
 <p>📞 7256939921</p>
@@ -152,3 +225,4 @@ Book Now
 
 </body>
   </html>
+
